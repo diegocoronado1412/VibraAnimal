@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block title %}Servicios - Veterinaria Vibra Animal{% endblock %}
+
+{% block content %}
+<section class="services-section">
+    <h2>Nuestros Servicios</h2>
+    <p>En Veterinaria Vibra Animal ofrecemos una amplia gama de servicios para el cuidado integral de tu mascota. Descubre nuestra atención especializada, tecnología de punta y un equipo comprometido con la salud de tu compañero.</p>
+    <div class="services-container">
+        <!-- Tarjeta 1: Hospitalización -->
+        <div class="service-card">
+            <img src="{{ url_for('static', filename='images/servicio_hospitalizacion.jpg') }}" alt="Hospitalización">
+            <h3>Hospitalización</h3>
+            <p>Contamos con unidades confortables y equipadas para el cuidado continuo de tu mascota, disponibles 24/7.</p>
+            <a href="#hospitalizacion" class="btn">Ver Detalles</a>
+        </div>
+        <!-- Tarjeta 2: Consultas Médicas -->
+        <div class="service-card">
+            <img src="{{ url_for('static', filename='images/servicio_consultas.jpg') }}" alt="Consultas Médicas">
+            <h3>Consultas Médicas</h3>
+            <p>Evaluaciones generales y especializadas para diagnósticos precisos y tratamientos personalizados.</p>
+            <a href="#consultas" class="btn">Ver Detalles</a>
+        </div>
+        <!-- Tarjeta 3: Tratamientos -->
+        <div class="service-card">
+            <img src="{{ url_for('static', filename='images/servicio_tratamientos.jpg') }}" alt="Tratamientos">
+            <h3>Tratamientos</h3>
+            <p>Atención integral para enfermedades, cirugías y terapias complementarias con tecnología de punta.</p>
+            <a href="#tratamientos" class="btn">Ver Detalles</a>
+        </div>
+        <!-- Tarjeta 4: Vacunación -->
+        <div class="service-card">
+            <img src="{{ url_for('static', filename='images/servicio_vacunacion.jpg') }}" alt="Vacunación">
+            <h3>Vacunación</h3>
+            <p>Programas de vacunación personalizados para prevenir enfermedades y mantener la salud.</p>
+            <a href="#vacunacion" class="btn">Ver Detalles</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

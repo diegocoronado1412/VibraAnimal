@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}Contacto - Veterinaria Vibra Animal{% endblock %}
+<div class="floating-form-container">
+{% block content %}
+  <!-- Sección Hero de Contacto -->
+  <section class="contact-hero" style="background-image: url('{{ url_for('static', filename='images/contacto-bg.jpg') }}');">
+      <div class="contact-hero-overlay">
+          <h1>Contáctanos</h1>
+          <p>Estamos aquí para ayudarte con el cuidado de tu mascota</p>
+      </div>
+  </section>
+
+  <!-- Sección del Formulario de Contacto -->
+  <section class="contact-form-section">
+      <h2>Envíanos tu mensaje</h2>
+      <p>Déjanos tus datos y te responderemos a la brevedad.</p>
+      {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+              <ul class="flash-messages">
+                  {% for category, message in messages %}
+                      <li class="mensaje {{ category }}">{{ message }}</li>
+                  {% endfor %}
+              </ul>
+          {% endif %}
+      {% endwith %}
+      <form method="POST" action="{{ url_for('contacto') }}">
+          <div class="form-group">
+              <label for="nombre">Nombre</label>
+              <input type="text" name="nombre" id="nombre" placeholder="Tu nombre" required>
+          </div>
+          <div class="form-group">
+              <label for="email">Correo electrónico</label>
+              <input type="email" name="email" id="email" placeholder="Tu correo electrónico" required>
+          </div>
+          <div class="form-group">
+              <label for="mensaje">Mensaje</label>
+              <textarea name="mensaje" id="mensaje" placeholder="Escribe tu mensaje aquí..." required></textarea>
+          </div>
+          <button type="submit" class="btn">Enviar Mensaje</button>
+      </form>
+  </section>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="floating-form-container">
+  <h2>Consulta Virtual</h2>
+  <form action="/agendar_consulta_virtual" method="post">
+    <fieldset>
+      <legend>Detalles de la Consulta</legend>
+      <label for="nombre_cliente">Nombre del Cliente:</label>
+      <input type="text" id="nombre_cliente" name="nombre_cliente" required><br><br>
+
+      <label for="nombre_mascota">Nombre de la Mascota:</label>
+      <input type="text" id="nombre_mascota" name="nombre_mascota" required><br><br>
+
+      <label for="fecha_consulta">Fecha de la Consulta:</label>
+      <input type="date" id="fecha_consulta" name="fecha_consulta" required><br><br>
+
+      <label for="hora_consulta">Hora de la Consulta:</label>
+      <input type="time" id="hora_consulta" name="hora_consulta" required><br><br>
+
+      <input type="submit" value="Agendar Consulta">
+    </fieldset>
+  </form>
+{% endblock %}

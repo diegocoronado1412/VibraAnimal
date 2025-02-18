@@ -1,0 +1,13 @@
+<!-- templates/forms/editar_veterinario.html -->
+{% extends "layout.html" %}
+
+{% block content %}
+<h2>Editar Veterinario</h2>
+<form method="POST">
+    <label for="nombre">Nombre</label>
+    <input type="text" id="nombre" name="nombre" value="{{ veterinario.nombre }}" required>
+    
+    <button type="submit">Actualizar Veterinario</button>
+</form>
+{% endblock %}
+

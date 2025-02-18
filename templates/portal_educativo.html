@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="floating-form-container">
+  <h2>Portal Educativo</h2>
+  <form action="/acceder_recursos" method="get">
+    <fieldset>
+      <legend>Seleccionar Categoría</legend>
+      <label for="categoria">Categoría:</label>
+      <select id="categoria" name="categoria" required>
+        <option value="alimentacion">Alimentación</option>
+        <option value="salud">Salud</option>
+        <option value="entrenamiento">Entrenamiento</option>
+      </select><br><br>
+
+      <input type="submit" value="Acceder">
+    </fieldset>
+  </form>
+{% endblock %}

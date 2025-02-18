@@ -1,0 +1,75 @@
+{% extends 'layout.html' %}
+
+{% block title %}Registro de Dueño - Veterinaria Vibra Animal{% endblock %}
+
+{% block content %}
+<div class="form-container">
+    <h2>Registro de Dueño</h2>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul class="flash-messages">
+                {% for category, message in messages %}
+                    <li class="{{ category }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+    <form method="POST" action="{{ url_for('registro_dueno') }}">
+        {{ form.hidden_tag() }}
+
+        <div class="form-group">
+            <label for="cedula">{{ form.cedula.label }}</label>
+            {{ form.cedula() }}
+            {% if form.cedula.errors %}
+                <ul class="error-list">
+                    {% for error in form.cedula.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+
+        <div class="form-group">
+            <label for="nombre">{{ form.nombre.label }}</label>
+            {{ form.nombre() }}
+            {% if form.nombre.errors %}
+                <ul class="error-list">
+                    {% for error in form.nombre.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+
+        <div class="form-group">
+            <label for="correo">{{ form.correo.label }}</label>
+            {{ form.correo() }}
+            {% if form.correo.errors %}
+                <ul class="error-list">
+                    {% for error in form.correo.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+
+        <div class="form-group">
+            <label for="telefono">{{ form.telefono.label }}</label>
+            {{ form.telefono() }}
+            {% if form.telefono.errors %}
+                <ul class="error-list">
+                    {% for error in form.telefono.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+
+        <div class="form-group">
+            <button type="submit">Registrar</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

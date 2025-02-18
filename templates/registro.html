@@ -1,0 +1,58 @@
+{% extends 'layout.html' %}
+
+{% block title %}Registro de Mascota - Veterinaria Vibra Animal{% endblock %}
+
+{% block content %}
+<div class="form-container">
+    <h2>Registro de Mascota</h2>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul class="flash-messages">
+                {% for category, message in messages %}
+                    <li class="{{ category }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+    <form method="POST">
+        <div class="form-group">
+            <label for="nombre">Nombre de la mascota:</label>
+            <input type="text" name="nombre" required>
+        </div>
+
+        <div class="form-group">
+            <label for="especie">Especie:</label>
+            <input type="text" name="especie" required>
+        </div>
+
+        <div class="form-group">
+            <label for="edad">Edad:</label>
+            <input type="number" name="edad" required>
+        </div>
+
+        <div class="form-group">
+            <label for="veterinario">Veterinario asignado:</label>
+            <select name="veterinario" required>
+                {% for veterinario in veterinarios %}
+                    <option value="{{ veterinario.id }}">{{ veterinario.nombre }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="dueño">Dueño de la mascota:</label>
+            <select name="dueño" required>
+                {% for dueño in dueños %}
+                    <option value="{{ dueño.id }}">{{ dueño.nombre }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="form-group">
+            <button type="submit">Registrar</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

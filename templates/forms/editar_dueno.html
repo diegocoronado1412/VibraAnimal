@@ -1,0 +1,11 @@
+<!-- templates/forms/editar_dueno.html -->
+{% extends "layout.html" %}
+
+{% block content %}
+<h2>Editar Dueño</h2>
+<form method="POST">
+    <label for="nombre">Nombre</label>
+    <input type="text" id="nombre" name="nombre" value="{{ dueno.nombre }}" required>
+    <button type="submit">Actualizar Dueño</button>
+</form>
+{% endblock %}

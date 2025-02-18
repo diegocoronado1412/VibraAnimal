@@ -1,0 +1,8 @@
+{% extends 'layout.html' %}
+
+{% block title %}Página no encontrada{% endblock %}
+
+{% block content %}
+<h2>Error 404</h2>
+<p>Lo sentimos, la página que buscas no existe. Regresa a la <a href="{{ url_for('index') }}">página principal</a>.</p>
+{% endblock %}

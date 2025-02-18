@@ -1,0 +1,90 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <!-- Sección Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Brindamos el Cuidado que Tu Mascota Se Merece</h1>
+      <p>La experiencia y profesionalismo que necesitas para el bienestar de tu mascota.</p>
+      <a href="#servicios" class="btn">Conoce Nuestros Servicios</a>
+    </div>
+    <div class="hero-image">
+      <img src="{{ url_for('static', filename='images/hero-perrito.jpg') }}" alt="Mascota feliz">
+    </div>
+  </section>
+
+  <!-- Sección Informativa -->
+  <section class="info" id="servicios">
+    <div class="info-text">
+      <h2>¡Amamos a tu mascota, igual que tú!</h2>
+      <p>
+        La Veterinaria Vibra Animal se ha especializado en el ejercicio de la Medicina Veterinaria que se ocupa de las enfermedades, 
+        su prevención, manejo, conducta, nutrición, selección genética, identificación y peritaje de perros, gatos y otros animales de compañía.
+      </p>
+      <ul>
+        <li>Abierto las 24 horas</li>
+        <li>Personal experimentado y profesional</li>
+        <li>Equipos de alta tecnología</li>
+        <li>Droguería Veterinaria</li>
+        <li>Pet shop</li>
+      </ul>
+      <a href="#contacto" class="btn">Contáctanos</a>
+    </div>
+    <div class="info-image">
+      <img src="{{ url_for('static', filename='images/info-perrito.jpg') }}" alt="Atención veterinaria">
+    </div>
+  </section>
+
+  <!-- Sección Emergencias -->
+  <section class="emergency" id="contacto">
+    <div class="emergency-text">
+      <h2>ATENDEMOS TU EMERGENCIA VETERINARIA</h2>
+      <p>Las 24 horas del día, al servicio de tu mascota.</p>
+      <a href="#contacto" class="btn">Contáctanos</a>
+    </div>
+    <div class="emergency-image">
+      <img src="{{ url_for('static', filename='images/emergency-perrito.jpg') }}" alt="Emergencia veterinaria">
+    </div>
+  </section>
+
+  <!-- Sección ¿Por qué elegirnos? -->
+  <section class="why-choose-us" id="por-que-elegirnos">
+    <h2>¿POR QUÉ ELEGIRNOS?</h2>
+    <div class="why-content">
+      <div class="why-text">
+        <p><strong>CALIDAD Y SEGURIDAD:</strong> Todos nuestros médicos y auxiliares están comprometidos a salvaguardar la vida de tu mascota.</p>
+      </div>
+      <div class="why-image">
+        <img src="{{ url_for('static', filename='images/why-perrito.jpg') }}" alt="Calidad y seguridad">
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Testimonios -->
+  <section class="testimonials" id="testimonios">
+    <h2>Testimonios</h2>
+    <div class="testimonial-carousel">
+      <div class="testimonial">
+        <p>"Excelente atención y cuidado para mi perro. ¡Recomiendo totalmente!"</p>
+        <footer>- Juan Pérez</footer>
+      </div>
+      <div class="testimonial">
+        <p>"Profesionales y muy amables. Mi gato está en las mejores manos."</p>
+        <footer>- María Gómez</footer>
+      </div>
+      <div class="testimonial">
+        <p>"Servicio excepcional. Mi mascota siempre está feliz de visitarlos."</p>
+        <footer>- Carlos Rodríguez</footer>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Sobre Nosotros -->
+  <section class="about-us" id="sobre-nosotros">
+    <h2>Sobre Nosotros</h2>
+    <p>
+      En la Veterinaria Vibra Animal, nos dedicamos a brindar servicios veterinarios de alta calidad. Nuestro equipo altamente capacitado 
+      utiliza tecnología de punta para el bienestar de tu mascota. Estamos comprometidos con la salud y el cuidado de los animales de compañía.
+    </p>
+  </section>
+{% endblock %}

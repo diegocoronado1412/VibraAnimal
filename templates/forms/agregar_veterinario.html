@@ -1,0 +1,11 @@
+<!-- templates/agregar_veterinario.html -->
+{% extends "layout.html" %}
+
+{% block content %}
+<h2>Agregar Veterinario</h2>
+<form method="POST">
+    <label for="nombre">Nombre</label>
+    <input type="text" id="nombre" name="nombre" required>
+    <button type="submit">Agregar Veterinario</button>
+</form>
+{% endblock %}

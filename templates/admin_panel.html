@@ -1,0 +1,32 @@
+<!-- templates/admin_panel.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Panel de Administración</h2>
+
+<div class="admin-dashboard">
+    <h3>Gestión de Veterinarios</h3>
+    <a href="{{ url_for('agregar_veterinario') }}">Agregar Veterinario</a>
+    <ul>
+        {% for veterinario in veterinarios %}
+        <li>{{ veterinario.nombre }} <a href="{{ url_for('editar_veterinario', id=veterinario.id) }}">Editar</a> | <a href="{{ url_for('eliminar_veterinario', id=veterinario.id) }}">Eliminar</a></li>
+        {% endfor %}
+    </ul>
+
+    <h3>Gestión de Dueños</h3>
+    <a href="{{ url_for('agregar_dueno') }}">Agregar Dueño</a>
+    <ul>
+        {% for dueno in duenos %}
+        <li>{{ dueno.nombre }} <a href="{{ url_for('editar_dueno', id=dueno.id) }}">Editar</a> | <a href="{{ url_for('eliminar_dueno', id=dueno.id) }}">Eliminar</a></li>
+        {% endfor %}
+    </ul>
+
+    <h3>Gestión de Mascotas</h3>
+    <a href="{{ url_for('agregar_mascota') }}">Agregar Mascota</a>
+    <ul>
+        {% for mascota in mascotas %}
+        <li>{{ mascota.nombre }} - {{ mascota.especie }} <a href="{{ url_for('editar_mascota', id=mascota.id) }}">Editar</a> | <a href="{{ url_for('eliminar_mascota', id=mascota.id) }}">Eliminar</a></li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

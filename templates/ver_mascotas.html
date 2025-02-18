@@ -1,0 +1,6 @@
+<h1>Mis Mascotas</h1>
+<ul>
+    {% for mascota in mascotas %}
+        <li>{{ mascota.nombre }} ({{ mascota.raza }})</li>
+    {% endfor %}
+</ul>

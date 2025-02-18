@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+
+{% block title %}Dashboard de Administrador{% endblock %}
+<div class="floating-form-container">
+{% block content %}
+    <h1>Dashboard de Administrador</h1>
+    <p>Total de mascotas: {{ total_mascotas }}</p>
+    <p>Total de tratamientos: {{ total_tratamientos }}</p>
+{% endblock %}

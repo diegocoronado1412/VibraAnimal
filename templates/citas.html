@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="floating-form-container">
+    <h1>Gestionar Citas</h1>
+    <form action="{{ url_for('procesar_cita') }}" method="POST">
+        <label for="nombre">Nombre del Cliente:</label>
+        <input type="text" id="nombre" name="nombre" required><br><br>
+
+        <label for="fecha">Fecha de la Cita:</label>
+        <input type="date" id="fecha" name="fecha" required><br><br>
+
+        <label for="hora">Hora de la Cita:</label>
+        <input type="time" id="hora" name="hora" required><br><br>
+
+        <label for="accion">Acción:</label>
+        <select id="accion" name="accion" required>
+            <option value="programar">Programar</option>
+            <option value="modificar">Modificar</option>
+            <option value="cancelar">Cancelar</option>
+        </select><br><br>
+
+        <input type="submit" value="Enviar">
+    </form>
+{% endblock %}

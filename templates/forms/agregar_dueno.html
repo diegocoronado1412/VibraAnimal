@@ -1,0 +1,11 @@
+<!-- templates/forms/agregar_dueno.html -->
+{% extends "layout.html" %}
+
+{% block content %}
+<h2>Agregar Dueño</h2>
+<form method="POST">
+    <label for="nombre">Nombre</label>
+    <input type="text" id="nombre" name="nombre" required>
+    <button type="submit">Agregar Dueño</button>
+</form>
+{% endblock %}
