@@ -6,3 +6,4 @@ class Config:
     SECRET_KEY = os.urandom(24)  # Para manejar sesiones seguras
 
 
+
